@@ -1,0 +1,23 @@
+{
+	"name": "popular",
+	"version": "1.0.0",
+	"description": "网易立马理财运营推广项目",
+	"dependencies": {
+		"lodash": "3.10.1",
+		"bower": "1.6.9",
+		"miaow": "~5.7.1",
+		"miaow-development-config": "~1.11.0"
+	},
+	"devDependencies": {
+		"miaow-production-config": "~1.11.0"
+	},
+	"scripts": {
+		"init": "npm install --production --no-optional -s --registry=https://registry.npm.taobao.org",
+		"build": "bower prune -s --allow-root && bower update -s --allow-root && miaow -c miaow.local.js",
+		"start": "bower prune -s --allow-root && bower update -s --allow-root && miaow -c miaow.local.js -w",
+		"localStart": "miaow -c miaow.local.js -w",
+		"set-loglevel": "npm config set loglevel error && cnpm config set loglevel error",
+		"release": "npm run set-loglevel && npm install --no-optional -s --registry=https://registry.npm.taobao.org && rm -rf ./src/.remote && bower install -s --allow-root && miaow -e production",
+		"test": "npm run set-loglevel && npm install --no-optional -s --registry=https://registry.npm.taobao.org && rm -rf ./src/.remote && bower install -s --allow-root && miaow -e test"
+	}
+}

@@ -1,0 +1,8 @@
+{
+	"name": "finance",
+	"dependencies": {
+		"requirejs": "temberature/requirejs#2.1.18",
+		"jquery": "temberature/jquery#1.0.2",
+		"mockjax": "temberature/mockjax#1.0.*"
+	}
+}

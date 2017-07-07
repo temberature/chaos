@@ -1,0 +1,5 @@
+{
+	"directory": "src/.remote",
+	"interactive": false,
+	"shorthand-resolver": "https://github.com/{{shorthand}}.git"
+}
