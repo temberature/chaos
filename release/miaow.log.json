@@ -1,0 +1,629 @@
+{
+  "version": "5.7.5",
+  "modules": {
+    "mobile/common/base/package.json": {
+      "src": "mobile/common/base/package.json",
+      "srcHash": "5c8a09a652b2a6840af01a73f5ff7c65",
+      "dest": "html/mobile/common/base/package.5c8a09a652.json",
+      "destHash": "5c8a09a652b2a6840af01a73f5ff7c65",
+      "url": "//60.205.223.68:8080/cdn/mobile/common/base/package.5c8a09a652.json",
+      "dependencies": [],
+      "extra": {},
+      "emitFiles": [
+        "html/mobile/common/base/package.json",
+        "html/mobile/common/base/package.5c8a09a652.json"
+      ]
+    },
+    "mobile/common/base/base.js": {
+      "src": "mobile/common/base/base.js",
+      "srcHash": "b59969fa4252ce7952149113b61e36f4",
+      "dest": "html/mobile/common/base/base.ea34ea5b2d.js",
+      "destHash": "ea34ea5b2d5b61944467ea7315d1f02e",
+      "url": "//60.205.223.68:8080/cdn/mobile/common/base/base.ea34ea5b2d.js",
+      "dependencies": [
+        ".remote/requirejs/require.js",
+        ".remote/jquery/mobile.js",
+        ".remote/jquery/addonLoader.js",
+        "mobile/common/base/package.json"
+      ],
+      "extra": {
+        "AMDDependencies": [],
+        "pack": {
+          "include": [
+            ".remote/requirejs/require.js",
+            ".remote/jquery/mobile.js",
+            ".remote/jquery/addonLoader.js"
+          ],
+          "exclude": []
+        }
+      },
+      "emitFiles": [
+        "html/mobile/common/base/base.js",
+        "html/mobile/common/base/base.ea34ea5b2d.js"
+      ]
+    },
+    "mobile/common/base/base.less": {
+      "src": "mobile/common/base/base.less",
+      "srcHash": "05fd6126292efc2968a38981ebd23bc6",
+      "dest": "html/mobile/common/base/base.06ebad74dd.css",
+      "destHash": "06ebad74dd386cbab25ca8a6a0024138",
+      "url": "//60.205.223.68:8080/cdn/mobile/common/base/base.06ebad74dd.css",
+      "dependencies": [
+        "mobile/common/base/style/normalize.less",
+        "mobile/common/base/style/reset.less",
+        "mobile/common/base/style/media.less"
+      ],
+      "extra": {},
+      "emitFiles": [
+        "html/mobile/common/base/base.css",
+        "html/mobile/common/base/base.06ebad74dd.css"
+      ]
+    },
+    "mobile/common/base/style/media.less": {
+      "src": "mobile/common/base/style/media.less",
+      "srcHash": "13ed1dbb501182d072c75821bc00967e",
+      "dest": "html/mobile/common/base/style/media.8d814dc3b3.css",
+      "destHash": "8d814dc3b3dcd76c986ce3d111f6328b",
+      "url": "//60.205.223.68:8080/cdn/mobile/common/base/style/media.8d814dc3b3.css",
+      "dependencies": [],
+      "extra": {},
+      "emitFiles": [
+        "html/mobile/common/base/style/media.css",
+        "html/mobile/common/base/style/media.8d814dc3b3.css"
+      ]
+    },
+    "mobile/common/base/style/normalize.less": {
+      "src": "mobile/common/base/style/normalize.less",
+      "srcHash": "46118f21b0f0ff4a54555bc9d7832f21",
+      "dest": "html/mobile/common/base/style/normalize.13b58ae412.css",
+      "destHash": "13b58ae412fc9fec1d8e0cb0ae5ad095",
+      "url": "//60.205.223.68:8080/cdn/mobile/common/base/style/normalize.13b58ae412.css",
+      "dependencies": [],
+      "extra": {},
+      "emitFiles": [
+        "html/mobile/common/base/style/normalize.css",
+        "html/mobile/common/base/style/normalize.13b58ae412.css"
+      ]
+    },
+    "mobile/common/core/core.less": {
+      "src": "mobile/common/core/core.less",
+      "srcHash": "d41d8cd98f00b204e9800998ecf8427e",
+      "dest": "html/mobile/common/core/core.d41d8cd98f.css",
+      "destHash": "d41d8cd98f00b204e9800998ecf8427e",
+      "url": "//60.205.223.68:8080/cdn/mobile/common/core/core.d41d8cd98f.css",
+      "dependencies": [],
+      "extra": {},
+      "emitFiles": [
+        "html/mobile/common/core/core.css",
+        "html/mobile/common/core/core.d41d8cd98f.css"
+      ]
+    },
+    "mobile/common/base/style/reset.less": {
+      "src": "mobile/common/base/style/reset.less",
+      "srcHash": "cd5c518aee3c975f6d6227e0daf0a0b2",
+      "dest": "html/mobile/common/base/style/reset.fff478b8d9.css",
+      "destHash": "fff478b8d9ff113c4281b72317b35d61",
+      "url": "//60.205.223.68:8080/cdn/mobile/common/base/style/reset.fff478b8d9.css",
+      "dependencies": [],
+      "extra": {},
+      "emitFiles": [
+        "html/mobile/common/base/style/reset.css",
+        "html/mobile/common/base/style/reset.fff478b8d9.css"
+      ]
+    },
+    "mobile/common/core/core.ftl": {
+      "src": "mobile/common/core/core.ftl",
+      "srcHash": "f8d60a70a2ae1b720f5c4b7ec303575a",
+      "dest": "FE/mobile/common/core/core.ftl",
+      "destHash": "fe2990ed166b353457fdd6ea46b5eb15",
+      "url": "/mobile/common/core/core.ftl",
+      "dependencies": [
+        "mobile/common/base/base.less",
+        "mobile/common/core/core.less",
+        "mobile/common/base/base.js",
+        "mobile/common/core/core.js",
+        "mobile/common/mock/base.ajax.js",
+        "mobile/common/core/ftl/macros.ftl"
+      ],
+      "extra": {},
+      "emitFiles": [
+        "FE/mobile/common/core/core.ftl"
+      ]
+    },
+    "mobile/common/core/core.js": {
+      "src": "mobile/common/core/core.js",
+      "srcHash": "fa7cfa7d0ea08cc5c7c17ce8c2500359",
+      "dest": "html/mobile/common/core/core.7895c5ae59.js",
+      "destHash": "7895c5ae59b12aefd1ca3a5431a4163e",
+      "url": "//60.205.223.68:8080/cdn/mobile/common/core/core.7895c5ae59.js",
+      "dependencies": [
+        "mobile/common/core/package.json"
+      ],
+      "extra": {
+        "AMDDependencies": [],
+        "pack": {
+          "include": [],
+          "exclude": [
+            "base"
+          ]
+        }
+      },
+      "emitFiles": [
+        "html/mobile/common/core/core.js",
+        "html/mobile/common/core/core.7895c5ae59.js"
+      ]
+    },
+    "mobile/common/core/ftl/funcs.ftl": {
+      "src": "mobile/common/core/ftl/funcs.ftl",
+      "srcHash": "01d06d3621924f8dcd265088c55db850",
+      "dest": "FE/mobile/common/core/ftl/funcs.ftl",
+      "destHash": "01d06d3621924f8dcd265088c55db850",
+      "url": "/mobile/common/core/ftl/funcs.ftl",
+      "dependencies": [],
+      "extra": {},
+      "emitFiles": [
+        "FE/mobile/common/core/ftl/funcs.ftl"
+      ]
+    },
+    "mobile/common/core/ftl/JSON.ftl": {
+      "src": "mobile/common/core/ftl/JSON.ftl",
+      "srcHash": "d22f834cda3ebccefb6bc7f2303a63df",
+      "dest": "FE/mobile/common/core/ftl/JSON.ftl",
+      "destHash": "d22f834cda3ebccefb6bc7f2303a63df",
+      "url": "/mobile/common/core/ftl/JSON.ftl",
+      "dependencies": [],
+      "extra": {},
+      "emitFiles": [
+        "FE/mobile/common/core/ftl/JSON.ftl"
+      ]
+    },
+    "mobile/common/core/package.json": {
+      "src": "mobile/common/core/package.json",
+      "srcHash": "8bb25fd015fd9714cacbdf5aa8f48be0",
+      "dest": "html/mobile/common/core/package.8bb25fd015.json",
+      "destHash": "8bb25fd015fd9714cacbdf5aa8f48be0",
+      "url": "//60.205.223.68:8080/cdn/mobile/common/core/package.8bb25fd015.json",
+      "dependencies": [],
+      "extra": {},
+      "emitFiles": [
+        "html/mobile/common/core/package.json",
+        "html/mobile/common/core/package.8bb25fd015.json"
+      ]
+    },
+    "mobile/common/mock/base.ajax.js": {
+      "src": "mobile/common/mock/base.ajax.js",
+      "srcHash": "d41d8cd98f00b204e9800998ecf8427e",
+      "dest": "html/mobile/common/mock/base.ajax.d41d8cd98f.js",
+      "destHash": "d41d8cd98f00b204e9800998ecf8427e",
+      "url": "//60.205.223.68:8080/cdn/mobile/common/mock/base.ajax.d41d8cd98f.js",
+      "dependencies": [],
+      "extra": {},
+      "emitFiles": [
+        "html/mobile/common/mock/base.ajax.js",
+        "html/mobile/common/mock/base.ajax.d41d8cd98f.js"
+      ]
+    },
+    "mobile/demo/main.ftl": {
+      "src": "mobile/demo/main.ftl",
+      "srcHash": "9660456036af17c32e0cf86d65eb9e67",
+      "dest": "FE/mobile/demo/main.ftl",
+      "destHash": "d79b461f4fe22d8cb1b449f8f0d950bf",
+      "url": "/mobile/demo/main.ftl",
+      "dependencies": [
+        "mobile/common/core/img/oglogo.png",
+        "mobile/common/core/core.ftl",
+        "mobile/demo/main.less",
+        "mobile/demo/main.js",
+        "mobile/demo/mock.ajax.js"
+      ],
+      "extra": {
+        "staticDependencies": [
+          "mobile/demo/main.less",
+          "mobile/demo/main.js",
+          "mobile/demo/mock.ajax.js"
+        ]
+      },
+      "emitFiles": [
+        "FE/mobile/demo/main.ftl"
+      ]
+    },
+    "mobile/common/core/js/detectNetType.js": {
+      "src": "mobile/common/core/js/detectNetType.js",
+      "srcHash": "34f7b4eb4e8c6b524dcf736621807bea",
+      "dest": "html/mobile/common/core/js/detectNetType.7e65da41bc.js",
+      "destHash": "7e65da41bc104abe68e9e685f9aaf03b",
+      "url": "//60.205.223.68:8080/cdn/mobile/common/core/js/detectNetType.7e65da41bc.js",
+      "dependencies": [],
+      "extra": {
+        "AMDDependencies": []
+      },
+      "emitFiles": [
+        "html/mobile/common/core/js/detectNetType.js",
+        "html/mobile/common/core/js/detectNetType.7e65da41bc.js"
+      ]
+    },
+    "mobile/common/core/ftl/macros.ftl": {
+      "src": "mobile/common/core/ftl/macros.ftl",
+      "srcHash": "169f75b17f83ec815e0c75f92e11be96",
+      "dest": "FE/mobile/common/core/ftl/macros.ftl",
+      "destHash": "363a56bf7873b8c5177c931cdf73d96a",
+      "url": "/mobile/common/core/ftl/macros.ftl",
+      "dependencies": [
+        "mobile/common/core/img/oglogo.png",
+        ".remote/mockjax/jquery-mockjax/jquery.mockjax.js",
+        ".remote/mockjax/mock/mock.js",
+        "mobile/common/core/ftl/funcs.ftl",
+        "mobile/common/core/ftl/JSON.ftl",
+        "mobile/common/core/js/detectNetType.js"
+      ],
+      "extra": {},
+      "emitFiles": [
+        "FE/mobile/common/core/ftl/macros.ftl"
+      ]
+    },
+    "mobile/common/core/img/oglogo.png": {
+      "src": "mobile/common/core/img/oglogo.png",
+      "srcHash": "ced51dad03616bfc6e63de609991e54d",
+      "dest": "html/mobile/common/core/img/oglogo.dc2e89c228.png",
+      "destHash": "dc2e89c228042533bfdc20a1de631633",
+      "url": "//60.205.223.68:8080/cdn/mobile/common/core/img/oglogo.dc2e89c228.png",
+      "dependencies": [],
+      "extra": {},
+      "emitFiles": [
+        "html/mobile/common/core/img/oglogo.png",
+        "html/mobile/common/core/img/oglogo.dc2e89c228.png"
+      ]
+    },
+    "mobile/demo/package.json": {
+      "src": "mobile/demo/package.json",
+      "srcHash": "2959b1b7c7901787dd37b59595cd24e3",
+      "dest": "html/mobile/demo/package.2959b1b7c7.json",
+      "destHash": "2959b1b7c7901787dd37b59595cd24e3",
+      "url": "//60.205.223.68:8080/cdn/mobile/demo/package.2959b1b7c7.json",
+      "dependencies": [],
+      "extra": {},
+      "emitFiles": [
+        "html/mobile/demo/package.json",
+        "html/mobile/demo/package.2959b1b7c7.json"
+      ]
+    },
+    "mobile/demo/main.js": {
+      "src": "mobile/demo/main.js",
+      "srcHash": "4db99840e68d6a0517c959c289116aa6",
+      "dest": "html/mobile/demo/main.b9dc976e9d.js",
+      "destHash": "b9dc976e9d5e2e0112ea0b4ac03f0b22",
+      "url": "//60.205.223.68:8080/cdn/mobile/demo/main.b9dc976e9d.js",
+      "dependencies": [
+        ".remote/jquery/jquery.js",
+        "mobile/demo/package.json"
+      ],
+      "extra": {
+        "AMDDependencies": [],
+        "pack": {
+          "include": [],
+          "exclude": [
+            "base",
+            "core"
+          ]
+        }
+      },
+      "emitFiles": [
+        "html/mobile/demo/main.js",
+        "html/mobile/demo/main.b9dc976e9d.js"
+      ]
+    },
+    "mobile/demo/mock.ajax.js": {
+      "src": "mobile/demo/mock.ajax.js",
+      "srcHash": "13299e8f860d6add1bdbba35089dcfc7",
+      "dest": "html/mobile/demo/mock.ajax.cb71dd68ed.js",
+      "destHash": "cb71dd68ed94ce9a1d03db1e317e7ece",
+      "url": "//60.205.223.68:8080/cdn/mobile/demo/mock.ajax.cb71dd68ed.js",
+      "dependencies": [
+        ".remote/jquery/jquery.js",
+        ".remote/mockjax/jquery-mockjax/jquery.mockjax.js"
+      ],
+      "extra": {
+        "AMDDependencies": [
+          ".remote/mockjax/jquery-mockjax/jquery.mockjax.js"
+        ]
+      },
+      "emitFiles": [
+        "html/mobile/demo/mock.ajax.js",
+        "html/mobile/demo/mock.ajax.cb71dd68ed.js"
+      ]
+    },
+    "mobile/index/main.ftl": {
+      "src": "mobile/index/main.ftl",
+      "srcHash": "1e616f66f02d6f065e2a7af6310f6cfa",
+      "dest": "FE/mobile/index/main.ftl",
+      "destHash": "0ad246a8abedd842ff872e07d39ba5ae",
+      "url": "/mobile/index/main.ftl",
+      "dependencies": [
+        "mobile/common/core/core.ftl",
+        "mobile/index/main.less",
+        "mobile/index/main.js",
+        "mobile/index/mock.ajax.js"
+      ],
+      "extra": {
+        "staticDependencies": [
+          "mobile/index/main.less",
+          "mobile/index/main.js",
+          "mobile/index/mock.ajax.js"
+        ]
+      },
+      "emitFiles": [
+        "FE/mobile/index/main.ftl"
+      ]
+    },
+    "mobile/demo/main.less": {
+      "src": "mobile/demo/main.less",
+      "srcHash": "2f8aea8d1d71da8d3f7954ef2980c403",
+      "dest": "html/mobile/demo/main.d41d8cd98f.css",
+      "destHash": "d41d8cd98f00b204e9800998ecf8427e",
+      "url": "//60.205.223.68:8080/cdn/mobile/demo/main.d41d8cd98f.css",
+      "dependencies": [],
+      "extra": {},
+      "emitFiles": [
+        "html/mobile/demo/main.css",
+        "html/mobile/demo/main.d41d8cd98f.css"
+      ]
+    },
+    "mobile/index/package.json": {
+      "src": "mobile/index/package.json",
+      "srcHash": "2959b1b7c7901787dd37b59595cd24e3",
+      "dest": "html/mobile/index/package.2959b1b7c7.json",
+      "destHash": "2959b1b7c7901787dd37b59595cd24e3",
+      "url": "//60.205.223.68:8080/cdn/mobile/index/package.2959b1b7c7.json",
+      "dependencies": [],
+      "extra": {},
+      "emitFiles": [
+        "html/mobile/index/package.json",
+        "html/mobile/index/package.2959b1b7c7.json"
+      ]
+    },
+    "mobile/index/main.js": {
+      "src": "mobile/index/main.js",
+      "srcHash": "4db99840e68d6a0517c959c289116aa6",
+      "dest": "html/mobile/index/main.b9dc976e9d.js",
+      "destHash": "b9dc976e9d5e2e0112ea0b4ac03f0b22",
+      "url": "//60.205.223.68:8080/cdn/mobile/index/main.b9dc976e9d.js",
+      "dependencies": [
+        ".remote/jquery/jquery.js",
+        "mobile/index/package.json"
+      ],
+      "extra": {
+        "AMDDependencies": [],
+        "pack": {
+          "include": [],
+          "exclude": [
+            "base",
+            "core"
+          ]
+        }
+      },
+      "emitFiles": [
+        "html/mobile/index/main.js",
+        "html/mobile/index/main.b9dc976e9d.js"
+      ]
+    },
+    "mobile/index/mock.ajax.js": {
+      "src": "mobile/index/mock.ajax.js",
+      "srcHash": "13299e8f860d6add1bdbba35089dcfc7",
+      "dest": "html/mobile/index/mock.ajax.cb71dd68ed.js",
+      "destHash": "cb71dd68ed94ce9a1d03db1e317e7ece",
+      "url": "//60.205.223.68:8080/cdn/mobile/index/mock.ajax.cb71dd68ed.js",
+      "dependencies": [
+        ".remote/jquery/jquery.js",
+        ".remote/mockjax/jquery-mockjax/jquery.mockjax.js"
+      ],
+      "extra": {
+        "AMDDependencies": [
+          ".remote/mockjax/jquery-mockjax/jquery.mockjax.js"
+        ]
+      },
+      "emitFiles": [
+        "html/mobile/index/mock.ajax.js",
+        "html/mobile/index/mock.ajax.cb71dd68ed.js"
+      ]
+    },
+    "mobile/index/main.less": {
+      "src": "mobile/index/main.less",
+      "srcHash": "44ea3ce79d6e6c9e62679e2209e3fb7d",
+      "dest": "html/mobile/index/main.09bbd61013.css",
+      "destHash": "09bbd61013b95f88ad159fdc11ba99bf",
+      "url": "//60.205.223.68:8080/cdn/mobile/index/main.09bbd61013.css",
+      "dependencies": [],
+      "extra": {},
+      "emitFiles": [
+        "html/mobile/index/main.css",
+        "html/mobile/index/main.09bbd61013.css"
+      ]
+    },
+    "mobile/post/main.ftl": {
+      "src": "mobile/post/main.ftl",
+      "srcHash": "aa764da7da349778d87701739600f5c6",
+      "dest": "FE/mobile/post/main.ftl",
+      "destHash": "298fe041473d4cbf44929448ee7524d2",
+      "url": "/mobile/post/main.ftl",
+      "dependencies": [
+        "mobile/common/core/core.ftl",
+        "mobile/post/main.less",
+        "mobile/post/main.js",
+        "mobile/post/mock.ajax.js"
+      ],
+      "extra": {
+        "staticDependencies": [
+          "mobile/post/main.less",
+          "mobile/post/main.js",
+          "mobile/post/mock.ajax.js"
+        ]
+      },
+      "emitFiles": [
+        "FE/mobile/post/main.ftl"
+      ]
+    },
+    "mobile/post/package.json": {
+      "src": "mobile/post/package.json",
+      "srcHash": "2959b1b7c7901787dd37b59595cd24e3",
+      "dest": "html/mobile/post/package.2959b1b7c7.json",
+      "destHash": "2959b1b7c7901787dd37b59595cd24e3",
+      "url": "//60.205.223.68:8080/cdn/mobile/post/package.2959b1b7c7.json",
+      "dependencies": [],
+      "extra": {},
+      "emitFiles": [
+        "html/mobile/post/package.json",
+        "html/mobile/post/package.2959b1b7c7.json"
+      ]
+    },
+    "mobile/post/main.js": {
+      "src": "mobile/post/main.js",
+      "srcHash": "4db99840e68d6a0517c959c289116aa6",
+      "dest": "html/mobile/post/main.b9dc976e9d.js",
+      "destHash": "b9dc976e9d5e2e0112ea0b4ac03f0b22",
+      "url": "//60.205.223.68:8080/cdn/mobile/post/main.b9dc976e9d.js",
+      "dependencies": [
+        ".remote/jquery/jquery.js",
+        "mobile/post/package.json"
+      ],
+      "extra": {
+        "AMDDependencies": [],
+        "pack": {
+          "include": [],
+          "exclude": [
+            "base",
+            "core"
+          ]
+        }
+      },
+      "emitFiles": [
+        "html/mobile/post/main.js",
+        "html/mobile/post/main.b9dc976e9d.js"
+      ]
+    },
+    "mobile/post/mock.ajax.js": {
+      "src": "mobile/post/mock.ajax.js",
+      "srcHash": "13299e8f860d6add1bdbba35089dcfc7",
+      "dest": "html/mobile/post/mock.ajax.cb71dd68ed.js",
+      "destHash": "cb71dd68ed94ce9a1d03db1e317e7ece",
+      "url": "//60.205.223.68:8080/cdn/mobile/post/mock.ajax.cb71dd68ed.js",
+      "dependencies": [
+        ".remote/jquery/jquery.js",
+        ".remote/mockjax/jquery-mockjax/jquery.mockjax.js"
+      ],
+      "extra": {
+        "AMDDependencies": [
+          ".remote/mockjax/jquery-mockjax/jquery.mockjax.js"
+        ]
+      },
+      "emitFiles": [
+        "html/mobile/post/mock.ajax.js",
+        "html/mobile/post/mock.ajax.cb71dd68ed.js"
+      ]
+    },
+    "mobile/post/main.less": {
+      "src": "mobile/post/main.less",
+      "srcHash": "1fe4ef6fd9758fda22e379519a3b8db6",
+      "dest": "html/mobile/post/main.68a824300a.css",
+      "destHash": "68a824300a2dab952408f0b25bdad94b",
+      "url": "//60.205.223.68:8080/cdn/mobile/post/main.68a824300a.css",
+      "dependencies": [],
+      "extra": {},
+      "emitFiles": [
+        "html/mobile/post/main.css",
+        "html/mobile/post/main.68a824300a.css"
+      ]
+    },
+    ".remote/requirejs/require.js": {
+      "src": ".remote/requirejs/require.js",
+      "srcHash": "015deaa9ba8998629538e28b2f474652",
+      "dest": "html/.remote/requirejs/require.a507763230.js",
+      "destHash": "a5077632302a6911ebb7fd27015d5f6c",
+      "url": "//60.205.223.68:8080/cdn/.remote/requirejs/require.a507763230.js",
+      "dependencies": [],
+      "extra": {
+        "AMDDependencies": []
+      },
+      "emitFiles": [
+        "html/.remote/requirejs/require.js",
+        "html/.remote/requirejs/require.a507763230.js"
+      ]
+    },
+    ".remote/jquery/mobile.js": {
+      "src": ".remote/jquery/mobile.js",
+      "srcHash": "b824424987ac6d537847a5352cac1faf",
+      "dest": "html/.remote/jquery/mobile.e3f5be8b9f.js",
+      "destHash": "e3f5be8b9fa67a9c80c93d38de5f459f",
+      "url": "//60.205.223.68:8080/cdn/.remote/jquery/mobile.e3f5be8b9f.js",
+      "dependencies": [],
+      "extra": {
+        "isThirdparty": true
+      },
+      "emitFiles": [
+        "html/.remote/jquery/mobile.js",
+        "html/.remote/jquery/mobile.e3f5be8b9f.js"
+      ]
+    },
+    ".remote/jquery/addonLoader.js": {
+      "src": ".remote/jquery/addonLoader.js",
+      "srcHash": "affc37f6195f81e9a9a86a5d41f3cd28",
+      "dest": "html/.remote/jquery/addonLoader.2f2b218676.js",
+      "destHash": "2f2b21867695d29e0c264de5ff3e26f4",
+      "url": "//60.205.223.68:8080/cdn/.remote/jquery/addonLoader.2f2b218676.js",
+      "dependencies": [],
+      "extra": {
+        "AMDDependencies": []
+      },
+      "emitFiles": [
+        "html/.remote/jquery/addonLoader.js",
+        "html/.remote/jquery/addonLoader.2f2b218676.js"
+      ]
+    },
+    ".remote/mockjax/jquery-mockjax/jquery.mockjax.js": {
+      "src": ".remote/mockjax/jquery-mockjax/jquery.mockjax.js",
+      "srcHash": "096af15138521471e15d5643f1a34d4f",
+      "dest": "html/.remote/mockjax/jquery-mockjax/jquery.mockjax.8b1ece853e.js",
+      "destHash": "8b1ece853e88bb59fb3d5af7250f2066",
+      "url": "//60.205.223.68:8080/cdn/.remote/mockjax/jquery-mockjax/jquery.mockjax.8b1ece853e.js",
+      "dependencies": [
+        ".remote/jquery/jquery.js"
+      ],
+      "extra": {
+        "AMDDependencies": []
+      },
+      "emitFiles": [
+        "html/.remote/mockjax/jquery-mockjax/jquery.mockjax.js",
+        "html/.remote/mockjax/jquery-mockjax/jquery.mockjax.8b1ece853e.js"
+      ]
+    },
+    ".remote/jquery/jquery.js": {
+      "src": ".remote/jquery/jquery.js",
+      "srcHash": "8c9955bc9028ffec7fec89d742c71371",
+      "dest": "html/.remote/jquery/jquery.08ee2ce3b2.js",
+      "destHash": "08ee2ce3b206f1b5c0d1f4c525d11392",
+      "url": "//60.205.223.68:8080/cdn/.remote/jquery/jquery.08ee2ce3b2.js",
+      "dependencies": [],
+      "extra": {
+        "isThirdparty": true
+      },
+      "emitFiles": [
+        "html/.remote/jquery/jquery.js",
+        "html/.remote/jquery/jquery.08ee2ce3b2.js"
+      ]
+    },
+    ".remote/mockjax/mock/mock.js": {
+      "src": ".remote/mockjax/mock/mock.js",
+      "srcHash": "8c3f020de812c8558219edde6ecc8055",
+      "dest": "html/.remote/mockjax/mock/mock.15b1814c05.js",
+      "destHash": "15b1814c05383910fdd6a3789e1c1c02",
+      "url": "//60.205.223.68:8080/cdn/.remote/mockjax/mock/mock.15b1814c05.js",
+      "dependencies": [],
+      "extra": {
+        "AMDDependencies": []
+      },
+      "emitFiles": [
+        "html/.remote/mockjax/mock/mock.js",
+        "html/.remote/mockjax/mock/mock.15b1814c05.js"
+      ]
+    }
+  }
+}
