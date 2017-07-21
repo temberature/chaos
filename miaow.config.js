@@ -11,7 +11,7 @@ developmentConfig.domain = '/cdn/';
 
 // 生产环境
 if (productionConfig) {
-	productionConfig.domain = '//pop.lmlc.com/cdn/';
+	productionConfig.domain = '//60.205.223.68:8080/cdn/';
 	testConfig = Object.assign({}, productionConfig, {
 		environment: 'test'
 	});

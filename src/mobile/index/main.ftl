@@ -13,43 +13,43 @@ css = ["./main.css"]
     <div class="neo-category" data-path="3">
         <div>
             <div class="neo-category-content">
-                <#if  week?index == 0>
+                <#if  week.order == 0>
                 ${"本周"}
-                <#elseif week?index == 1>
+                <#elseif week.order == 1>
                 ${"下周"}
-                <#elseif week?index == 2>
+                <#elseif week.order == 2>
                 ${"下下周"}
                 <#else>
-                ${"＋" + week?index + "周"}
+                ${"＋" + week.order + "周"}
                 </#if>
             </div>
         </div>
     </div>
 
     <#list week.days as day>
-        <#if fn_formatDateTime(day.date, "yyyy-MM-dd") == fn_formatDateTime(.now, "yyyy-MM-dd")>
+        <#if fn_formatDateTime(day.startTime, "yyyy-MM-dd") == fn_formatDateTime(.now, "yyyy-MM-dd")>
         <div class="m-day today">
         <#else>
         <div class="m-day">
         </#if>
         <div class="date">
-        ${fn_formatDateTime(day.date, "E，dd号")}
+        ${fn_formatDateTime(day.startTime, "E，dd号")}
         </div>
         <#list day.events as event>
-            <a href="${event.url}">
+            <a href="${event.eventUrl}">
                 <div class="event">
                     <div class="startTime">
                     ${fn_formatDateTime(event.startTime, "ah:mm")}
                     </div>
                     <div class="endTime">
-                    ${(event.endTime - event.startTime)/3600000 + '小时'}
+                    ${(event.endTime?long - event.startTime?long)/3600000 + '小时'}
                     </div>
                     <div class="divider"></div>
                     <div class="topic">
-                    ${event.topic}
+                    ${event.title}
                     </div>
                     <div class="place">
-                        <i class="material-icons">place</i>${event.place}
+                        <i class="material-icons">place</i>${event.address}
                     </div>
                 </div>
             </a>

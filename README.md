@@ -5,3 +5,5 @@ bower 依赖：bower.json
 项目依赖：package.json
 
 npm run release 需要安装pngquant
+
+https://material.io/icons/
