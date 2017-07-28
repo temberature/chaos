@@ -1,6 +1,9 @@
-
+@import "mint-ui/style";
 #main {
-  form {
+  [v-cloak] {
+    display: none;
+  }
+  .creat-event-form {
     width: 355px;
     margin: 0 auto;
     .form-group {
@@ -13,12 +16,16 @@
         color: #666666;
         line-height: 34px;
         vertical-align: middle;
+        font-family: Tahoma;
       }
       input {
         width: 289px;
         height: 32px;
         padding-left: 15px;
         border: 1px solid #D8D8D8;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
       }
       select {
         width: 100px;
@@ -26,6 +33,62 @@
         padding: 0 20px;
         border: 1px solid #d8d8d8;
       }
+      .text-input {
+        display: inline-block;
+        vertical-align: middle;
+        width: 289px;
+        height: 32px;
+        padding: 8px 0 8px 15px;
+        border: 1px solid #D8D8D8;
+        border-radius: 0;
+        font-size: 14px;
+        color: #666666;
+        line-height: 1.2;
+        outline: 0;
+      }
+      .text-input-wrapper {
+        position: relative;
+        display: inline-block;
+        .tips {
+          //display: none;
+          position: absolute;
+          /* visibility: hidden; */
+          z-index: 2;
+          /* opacity: 0; */
+          -webkit-transition: opacity .3s;
+          transition: opacity .3s;
+          bottom: 100%;
+          left: 80px;
+          margin-bottom: 5px;
+          span {
+            display: inline-block;
+            line-height: 1;
+            padding: 7px 12px;
+            border-radius: 2px;
+            white-space: nowrap;
+            color: #fff;
+            font-size: 12px;
+          }
+        }
+        .tips:after,.tips:before {
+          top: 100%;
+          margin-top: -5px;
+          content: "";
+          position: absolute;
+          width: 10px;
+          height: 10px;
+          left: 50%;
+          margin-left: -5px;
+          -webkit-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+          transform: rotate(45deg)
+        }
+        .tips.error:after,.tips.error:before,.tips.error span {
+          background: #fe857d
+        }
+
+      }
+
     }
     button {
       display: block;

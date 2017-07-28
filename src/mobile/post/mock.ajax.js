@@ -1,9 +1,9 @@
 require(['jquery', 'mockjax'], function($) {
 	// 假数据接口 $.mockjax / Mock.mock
 	$.mockjax({
-		url: "/mockjax/list",
+		url: "/event",
 		responseText: Mock.mock({
-
+			retcode: 200
 		})
 	});
 })
