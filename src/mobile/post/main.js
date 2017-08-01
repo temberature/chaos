@@ -14,7 +14,7 @@ require(['jquery', 'core', 'vue','mint-ui'], function($, Core, Vue, MintUI) {
                 tip: ''
             },
             endTime: {
-                value: new Date(),
+                value: new Date('2017-08-01'),
                 error: false,
                 tip: ''
             },
@@ -58,7 +58,13 @@ require(['jquery', 'core', 'vue','mint-ui'], function($, Core, Vue, MintUI) {
                     return false;
                 }
                 app.$indicator.open();
-                $.post('/event', this._data, function (rs) {
+                $.post('/web/bookhero/event/create', {
+                    title: this.title.value,
+                    startTime: Core.formatTime(this.startTime.value),
+                    endTime: Core.formatTime(this.endTime.value),
+                    address: this.address.value,
+                    eventUrl: this.event_url.value
+                }, function (rs) {
                     app.$indicator.close();
                     console.log(rs);
                     if (rs.retcode == 200) {
@@ -66,6 +72,8 @@ require(['jquery', 'core', 'vue','mint-ui'], function($, Core, Vue, MintUI) {
                             .then(function () {
                                 document.location.reload();
                             })
+                    } else {
+                        app.$messagebox.alert(rs.retdesc);
                     }
                 })
             },

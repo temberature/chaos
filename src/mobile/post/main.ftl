@@ -1,7 +1,7 @@
 <#-- <#mock "mock.ftl.js"> -->
 <#include "core/core.ftl">
 <@docHead
-	title = "标题"
+	title = "发布活动"
 	css = ["./main.css"]
 />
 <#-- livereload -->
