@@ -1,1 +1,0 @@
-require(["jquery","//60.205.223.68:8080/cdn/.remote/mockjax/jquery-mockjax/jquery.mockjax.8b1ece853e.js"],function(e){e.mockjax({url:"/mockjax/list",responseText:Mock.mock({})})});

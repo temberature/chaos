@@ -1,1 +1,1 @@
-require([],function(){console.log("core.js")});
+define("//60.205.223.68:8080/cdn/mobile/common/core/core.2d6dd1f1da.js",["jquery","//60.205.223.68:8080/cdn/mobile/common/core/js/formatTime.1a13084138.js"],function(o,e){return{formatTime:e,postJSON:function(e,n,r){return o.ajax({type:"POST",url:e,contentType:"application/json",data:JSON.stringify(n),dataType:"json",success:r})}}}),require([],function(){console.log("core.js")});

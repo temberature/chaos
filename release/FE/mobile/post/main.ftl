@@ -1,46 +1,66 @@
 <#-- <#mock "mock.ftl.js"> -->
 <#include "../common/core/core.ftl">
-<@docHead 
-	title = "标题"
-	css=["//60.205.223.68:8080/cdn/mobile/post/main.68a824300a.css"]
+<@docHead
+	title = "发布活动"
+	css=["//60.205.223.68:8080/cdn/mobile/post/main.fc290621ef.css"]
 />
 <#-- livereload -->
 <@pageHead/>
+<!-- 引入样式 -->
+<!-- 引入组件库 -->
 
+<div id="app">
 <#-- 私有代码 -->
-<form class="creat-event-form" action="">
-    <div class="form-group">
-        <label class="field">活动标题</label>
-        <input type="text" class="text-input" required="" placeholder="必填" autocomplete="off">
-    </div>
-    <div class="form-group">
-        <label class="field">开始时间</label>
-        <input type="text" class="text-input" required="" placeholder="必填" autocomplete="off">
-    </div>
-    <div class="form-group">
-        <label class="field">结束时间</label>
-        <input type="text" class="text-input" required="" placeholder="必填" autocomplete="off">
-    </div>
-    <div class="form-group">
-        <label class="field">活动地点</label>
-        <div>
-            <select name="" id="">
-                <option value="">北京</option>
-                <option value="">2</option>
-            </select>
-            <select name="" id="">
-                <option value="">北京</option>
-                <option value="">2</option>
-            </select>
-            <input type="text" class="text-input" required="" placeholder="必填" autocomplete="off">
-        </div>
+    <div class="creat-event-form">
+        <div class="form-group">
+            <label class="field">活动标题</label>
+            <div class="text-input-wrapper">
+                <input v-model="title.value" type="tel" class="text-input" placeholder="必填" autocomplete="off">
+                <div v-show="title.error"class="tips error" v-cloak=""><span v-text="title.tip"></span></div>
+            </div>
 
+        </div>
+        <div class="form-group">
+            <label class="field">开始时间</label>
+            <div class="text-input-wrapper">
+                <div @click="openTimePicker('start')" v-text="startTimeStr" class="text-input">${fn_formatDateTime(.now, 'yyyy-MM-dd hh:mm')}</div>
+                <div v-show="startTime.error" class="tips error" v-cloak=""><span v-text="startTime.tip"></span></div>
+            </div>
+
+        </div>
+        <div class="form-group">
+            <label class="field">结束时间</label>
+            <div class="text-input-wrapper">
+                <div @click="openTimePicker('end')" v-text="endTimeStr" class="text-input">${fn_formatDateTime(.now, 'yyyy-MM-dd hh:mm')}</div>
+            </div>
+
+        </div>
+        <div class="form-group">
+            <label class="field">活动地点</label>
+            <div class="text-input-wrapper">
+                <input v-model="address.value" type="text" class="text-input" placeholder="必填" autocomplete="off">
+                <div v-show="address.error" class="tips error" v-cloak=""><span v-text="address.tip"></span></div>
+            </div>
+
+
+        </div>
+        <div class="form-group">
+            <label class="field">链接地址</label>
+            <div class="text-input-wrapper">
+                <input v-model="event_url.value" type="text" class="text-input" placeholder="选填" autocomplete="off">
+                <div v-show="event_url.error" class="tips error" v-cloak=""><span v-text="event_url.tip"></span></div>
+            </div>
+
+        </div>
+        <button @click="postEvent">发布活动</button>
     </div>
-    <div class="form-group">
-        <label class="field">链接地址</label>
-        <input type="text" class="text-input" required="" placeholder="必填" autocomplete="off">
-    </div>
-    <button>创建活动</button>
-</form>
+    <mt-datetime-picker
+            ref="timePicker"
+            type="datetime"
+            v-model="timePickerValue">
+    </mt-datetime-picker>
+</div>
+
+
 <@pageFoot />
-<@docFoot js=["//60.205.223.68:8080/cdn/mobile/post/main.b9dc976e9d.js"] mockjax=["//60.205.223.68:8080/cdn/mobile/post/mock.ajax.cb71dd68ed.js"] />
+<@docFoot js=["//60.205.223.68:8080/cdn/mobile/post/main.458f439449.js"] mockjax=["//60.205.223.68:8080/cdn/mobile/post/mock.ajax.6f1a2655cf.js"] />

@@ -27,13 +27,13 @@ css = ["./main.css"]
     </div>
 
     <#list week.days as day>
-        <#if fn_formatDateTime(day.startTime, "yyyy-MM-dd") == fn_formatDateTime(.now, "yyyy-MM-dd")>
+        <#if fn_formatDateTime(day.date, "yyyy-MM-dd") == fn_formatDateTime(.now, "yyyy-MM-dd")>
         <div class="m-day today">
         <#else>
         <div class="m-day">
         </#if>
         <div class="date">
-        ${fn_formatDateTime(day.startTime, "E，dd号")}
+        ${fn_formatDateTime(day.date, "E，dd号")}
         </div>
         <#list day.events as event>
             <a href="${event.eventUrl}">
@@ -41,9 +41,11 @@ css = ["./main.css"]
                     <div class="startTime">
                     ${fn_formatDateTime(event.startTime, "ah:mm")}
                     </div>
-                    <div class="endTime">
-                    ${(event.endTime?long - event.startTime?long)/3600000 + '小时'}
-                    </div>
+                    <#if event.endTime??>
+                        <div class="endTime">
+                        ${(event.endTime?long - event.startTime?long)/3600000 + '小时'}
+                        </div>
+                    </#if>
                     <div class="divider"></div>
                     <div class="topic">
                     ${event.title}
@@ -66,4 +68,4 @@ css = ["./main.css"]
 
 
 <@pageFoot />
-<@docFoot js = [ "./main.js" ] mockjax = ["./mock.ajax.js"] />
+<@docFoot js = [ "./main.js" ] mockjax = ["./mock.ajax.js"] useFtlData = true/>

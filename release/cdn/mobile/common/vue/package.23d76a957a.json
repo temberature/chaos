@@ -1,0 +1,5 @@
+{
+	"name": "vue",
+	"description": "数据驱动的组件vue",
+	"main": "./vue.js"
+}

@@ -139,7 +139,7 @@
     <#assign RES_CSS_BASE_LIST = ['//60.205.223.68:8080/cdn/mobile/common/base/base.06ebad74dd.css']/>
     <#assign RES_CSS_CORE_LIST = ['//60.205.223.68:8080/cdn/mobile/common/core/core.d41d8cd98f.css']/>
     <#assign RES_JS_BASE_LIST = ['//60.205.223.68:8080/cdn/mobile/common/base/base.ea34ea5b2d.js']/>
-    <#assign RES_JS_CORE_LIST = ['//60.205.223.68:8080/cdn/mobile/common/core/core.7895c5ae59.js']/>
+    <#assign RES_JS_CORE_LIST = ['//60.205.223.68:8080/cdn/mobile/common/core/core.2d6dd1f1da.js']/>
     <#assign RES_MOCK_BASE_LIST = ['//60.205.223.68:8080/cdn/mobile/common/mock/base.ajax.d41d8cd98f.js']/>
 
     <#assign sys = {
