@@ -1,8 +1,8 @@
 {
-	"name":"main",
-	"main": "main.js",
+	"name":"私有页面入口模块",
+	"main": "main.es6",
 	"pack": {
-		"name": "main.js",
+		"name": "main.es6",
 		"exclude": ["base", "core"]
 	}
 }

@@ -1,54 +1,60 @@
-@import "mint-ui/style";
+html, body {
+  background: #f8f8f8;
+}
 #main {
   [v-cloak] {
     display: none;
   }
   .creat-event-form {
-    width: 355px;
-    margin: 0 auto;
-    .form-group {
-      margin-top: 20px;
+    .cells {
+      margin: 10px auto;
+      border-top: 1px solid #e5e5e5;
+      border-bottom: 1px solid #e5e5e5;
+      background: #fff;
+      &>.cell {
+        border-top: 0;
+      }
+    }
+    .cell {
+      display: flex;
+      //justify-content: space-between;
+      align-items: center;
+      margin-left: 15px;
+      border-top: 1px solid #e5e5e5;
+      padding: 5px 15px 5px 5px;
       font-size: 0;
+      &+.cell {
+        border-top: 1px solid #e5e5e5;
+      }
       label {
-        margin-right: 10px;
-
-        font-size: 14px;
-        color: #666666;
-        line-height: 34px;
-        vertical-align: middle;
+        display: block;
+        width: 105px;
+        font-size: 16px;
+        color: #333;
+        line-height: 35px;
         font-family: Tahoma;
       }
-      input {
-        width: 289px;
-        height: 32px;
-        padding-left: 15px;
-        border: 1px solid #D8D8D8;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-      }
-      select {
-        width: 100px;
-        height: 32px;
-        padding: 0 20px;
-        border: 1px solid #d8d8d8;
-      }
-      .text-input {
-        display: inline-block;
-        vertical-align: middle;
-        width: 289px;
-        height: 32px;
-        padding: 8px 0 8px 15px;
-        border: 1px solid #D8D8D8;
-        border-radius: 0;
-        font-size: 14px;
-        color: #666666;
-        line-height: 1.2;
-        outline: 0;
-      }
-      .text-input-wrapper {
+      .cell_value {
+        flex: 1;
         position: relative;
         display: inline-block;
+
+        input, .text-input {
+          display: inline-block;
+          vertical-align: middle;
+          width: 100%;
+          border: 0;
+          border-radius: 0;
+          padding: 8px 0 8px 15px;
+          font-size: 16px;
+          color: #666666;
+          line-height: 1.2;
+          outline: 0;
+          text-align: right;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+        }
         .tips {
           //display: none;
           position: absolute;
@@ -57,7 +63,6 @@
           /* opacity: 0; */
           -webkit-transition: opacity .3s;
           transition: opacity .3s;
-          bottom: 100%;
           left: 80px;
           margin-bottom: 5px;
           span {
@@ -70,9 +75,9 @@
             font-size: 12px;
           }
         }
-        .tips:after,.tips:before {
-          top: 100%;
-          margin-top: -5px;
+        .tips:before {
+          bottom: 100%;
+          margin-bottom: -5px;
           content: "";
           position: absolute;
           width: 10px;
@@ -84,20 +89,120 @@
           transform: rotate(45deg)
         }
         .tips.error:after,.tips.error:before,.tips.error span {
-          background: #fe857d
+          background: #fe857d;
         }
+      }
+      &.cell_select {
+        position: relative;
+        select {
+          width: 100%;
+          height: 30px;
+          border: 0;
+          outline: 0;
+          padding-right: 30px;
+          font-size: 16px;
+          color: #333;
+          direction: rtl;
+          -webkit-appearance: none;
 
+        }
+        &:after {
+          content: " ";
+          display: inline-block;
+          height: 6px;
+          width: 6px;
+          border-width: 2px 2px 0 0;
+          border-color: #C8C8CD;
+          border-style: solid;
+          -webkit-transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+          transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+          position: absolute;
+          top: 50%;
+          right: 15px;
+          margin-top: -4px;
+        }
       }
 
+      .cell__value {
+        flex: 1;
+        text-align: right;
+        .switch {
+          position: relative;
+          width: 52px;
+          height: 32px;
+          border: 1px solid #DFDFDF;
+          outline: 0;
+          border-radius: 16px;
+          background-color: #DFDFDF;
+          -webkit-transition: background-color 0.1s, border 0.1s;
+          transition: background-color 0.1s, border 0.1s;
+          appearance: none;
+          -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+          &:before {
+            content: " ";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50px;
+            height: 30px;
+            border-radius: 15px;
+            background-color: #FDFDFD;
+            transition: transform 0.35s cubic-bezier(0.45, 1, 0.4, 1);
+          }
+          &:after {
+            content: " ";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 30px;
+            height: 30px;
+            border-radius: 15px;
+            background-color: #FFFFFF;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+            transition: transform 0.35s cubic-bezier(0.4, 0.4, 0.25, 1.35);
+          }
+          &:checked {
+            border-color: #04BE02;
+            background-color: #04BE02;
+            &:before {
+              transform: scale(0);
+            }
+            &:after {
+              transform: translateX(20px);
+            }
+          }
+
+
+        }
+      }
+      
+
     }
-    button {
+    .btn {
       display: block;
-      margin: 60px auto;
-      border: 0;
-      padding: 7px 15px;
-      font-size: 12px;
+      margin: 40px 15px;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      border-radius: 5px;
+      font-size: 18px;
+      line-height: 2.55555556;
       color: #fff;
-      background: #4DB4BE;
+      text-align: center;
+      &.btn_default {
+        color: #000000;
+        background-color: #F8F8F8;
+        &.btn_disabled {
+          color: rgba(0, 0, 0, 0.3);
+          background-color: #F7F7F7;
+        }
+      }
+      &.btn_primary {
+        background: #35BC5F;
+        &.btn_disabled {
+          color: rgba(255, 255, 255, 0.6);
+          background-color: #9ED99D;
+        }
+      }
+
     }
   }
 }
