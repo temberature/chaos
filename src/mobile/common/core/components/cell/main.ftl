@@ -1,14 +1,14 @@
 <#include "./picker/main.ftl">
-<#macro input label placeholder>
-<div class="weui-cell">
+<#macro input label placeholder emptyTips class="" required="" value="">
+<div class="${class} weui-cell">
     <div class="weui-cell__hd"><label class="weui-label">${label}</label></div>
     <div class="weui-cell__bd">
-        <input class="weui-input" type="number" pattern="[0-9]*" placeholder="${placeholder}">
+        <input class="weui-input" type="text" placeholder="${placeholder}" ${required} emptyTips="${emptyTips}" value="${value}">
     </div>
 </div>
 </#macro>
-<#macro select label options>
-<div class="weui-cell weui-cell_select weui-cell_select-after">
+<#macro select label options class="" style="">
+<div class="${class} weui-cell weui-cell_select weui-cell_select-after" style="${style}">
     <div class="weui-cell__hd">
         <label for="" class="weui-label">${label}</label>
     </div>
@@ -21,8 +21,8 @@
     </div>
 </div>
 </#macro>
-<#macro switch label>
-<div class="weui-cell weui-cell_switch">
+<#macro switch label class=''>
+<div class="${class} weui-cell weui-cell_switch">
     <div class="weui-cell__bd">${label}</div>
     <div class="weui-cell__ft">
         <input class="weui-switch" type="checkbox">

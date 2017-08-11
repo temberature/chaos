@@ -15,7 +15,7 @@
 */
 
 import $ from '../util/util';
-import tpl from './topTips.html';
+import tpl from './topTips.tpl';
 
 let _toptips = null;
 

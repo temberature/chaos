@@ -14,6 +14,7 @@
 * limitations under the License.
 */
 
+import jQuery from 'jquery';
 import $ from '../util/util';
 import topTips from '../topTips/topTips';
 
@@ -153,6 +154,9 @@ function validate(selector, callback = $.noop, options = {}){
     $eles.forEach((ele) => {
         const $form = $(ele);
         const $requireds = $form.find('[required]');
+        $requireds.on('focus', function () {
+            hideErrorTips(this);
+        });
         if(typeof callback != 'function') callback = showErrorTips;
 
         for(let i = 0, len = $requireds.length; i < len; ++i){
@@ -231,6 +235,7 @@ function showErrorTips(error){
 
         if(error.ele.type == 'checkbox' || error.ele.type == 'radio') return;
 
+        jQuery('body').scrollTop(jQuery(error.ele).offset().top - 60);
         const cellParent = _findCellParent(error.ele);
         if(cellParent) cellParent.classList.add('weui-cell_warn');
     }

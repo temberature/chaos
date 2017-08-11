@@ -14,7 +14,7 @@
 * limitations under the License.
 */
 
-import 'element-closest';
+import './element-closest';
 import objectAssign from './object-assign';
 import $ from './balajs';
 

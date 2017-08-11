@@ -1,6 +1,5 @@
 module.exports = {
     data: {
-        weekCount: 4,
         weeks: [
             {
                 order: 0,

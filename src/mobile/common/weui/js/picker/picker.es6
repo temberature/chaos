@@ -318,7 +318,7 @@ function picker() {
     }
 
     $picker.find('.weui-picker__bd').html(groups);
-    show();
+    // hide();
 
     if (isMulti) {
         items.forEach((item, index) => {
@@ -337,6 +337,7 @@ function picker() {
 
     _sington = $picker[0];
     _sington.hide = hide;
+    _sington.show = show;
     return _sington;
 }
 
