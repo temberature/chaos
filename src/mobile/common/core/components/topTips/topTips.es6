@@ -16,9 +16,13 @@
 
 import $ from '../util/util';
 import tpl from './topTips.tpl';
+import style from './weui-topTip.less';
 
+style.use();
 class topTip {
-    constructor(content, options = {}) {
+    constructor(options = {}) {
+        const me = this;
+
         if (typeof options === 'number') {
             options = {
                 duration: options
@@ -32,25 +36,34 @@ class topTip {
         }
 
         options = $.extend({
-            content: content,
+            content: '',
             duration: 2000,
             callback: $.noop,
-            className: ''
+            className: '',
+            $mountNode: '',
+            method: ''
         }, options);
 
-        this.$body = $($.render(tpl, options));
-        this.timeout = setTimeout(this.hide.bind(this), options.duration);
-        this.options = options;
+        me.options = options;
 
-        return this;
+        return me;
     }
-    render(selector, method) {
-        $(selector)[method](this.$body);
+    render(options, selector, method) {
+        const me = this;
+        me.$body = $($.render(tpl, options));
+        $(selector)[method](me.$body);
     }
-    hide(callback) {
+    remove(callback) {
         this.$body.remove();
         callback && callback();
         this.options.callback();
+    }
+    appear(pars) {
+        const me = this;
+        const options = me.options;
+        me.$body = $($.render(tpl, pars));
+        options.$mountNode[options.method](me.$body);
+        me.timeout = setTimeout(me.remove.bind(me), options.duration);
     }
 }
 let _toptips = null;

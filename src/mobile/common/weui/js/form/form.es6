@@ -14,10 +14,154 @@
 * limitations under the License.
 */
 
+import Base from '../base/base'
 import jQuery from 'jquery';
 import $ from '../util/util';
-import topTips from '../topTips/topTips';
+import topTip from '../topTips/topTips';
 
+
+class Form extends Base {
+    constructor(callback = $.noop, options = {}) {
+        super();
+
+
+        this.callback = callback;
+        this.options = options;
+        return this;
+    }
+    render($mountNode, method) {
+        this.$form = $mountNode;
+        return this;
+    }
+    validate() {
+        const $form = this.$form;
+        const $requireds = $form.find('[required]');
+        let callback = typeof this.callback != 'function' || this.showErrorTips;
+        $requireds.forEach((required) => {
+            const $required = $(required),
+                errorMsg = this._validate($required, $form, this.options.regexp),
+                error = {ele: $required[0], msg: errorMsg};
+            if (errorMsg) {
+                callback(error);
+                this.emit('error', error);
+            }
+        })
+        return this;
+    }
+    _validate($input, $form, regexp) {
+        const input = $input[0], val = $input.val();
+
+        if(input.tagName == 'INPUT' || input.tagName == 'TEXTAREA'){
+            let reg = input.getAttribute('pattern') || '';
+
+            if(input.type == 'radio') {
+                const radioInputs = $form.find('input[type="radio"][name="' + input.name + '"]');
+                for (let i = 0, len = radioInputs.length; i < len; ++i) {
+                    if(radioInputs[i].checked) return null;
+                }
+                return 'empty';
+            }else if(input.type == 'checkbox'){
+                if(reg){
+                    const checkboxInputs = $form.find('input[type="checkbox"][name="' + input.name + '"]');
+                    const regs = reg.replace(/[{\s}]/g, '').split(',');
+                    let count = 0;
+
+                    if(regs.length != 2){
+                        throw input.outerHTML + ' regexp is wrong.';
+                    }
+
+                    checkboxInputs.forEach((checkboxInput) => {
+                        if(checkboxInput.checked) ++count;
+                    });
+
+                    if(regs[1] === ''){ // {0,}
+                        if(count >= parseInt(regs[0])){
+                            return null;
+                        }else{
+                            return count == 0 ? 'empty' : 'notMatch';
+                        }
+                    }else{ // {0,2}
+                        if(parseInt(regs[0]) <= count && count <= parseInt(regs[1])){
+                            return null;
+                        }else{
+                            return count == 0 ? 'empty' : 'notMatch';
+                        }
+                    }
+                }else{
+                    return input.checked ? null : 'empty';
+                }
+            }else if(reg){
+                if(/^REG_/.test(reg)){
+                    if(!regexp) throw 'RegExp ' + reg + ' is empty.';
+
+                    reg = reg.replace(/^REG_/, '');
+                    if(!regexp[reg]) throw 'RegExp ' + reg + ' has not found.';
+
+                    reg = regexp[reg];
+                }
+                return new RegExp(reg).test(val) ? null : !$input.val().length ? 'empty' : 'notMatch';
+            }else if(!$input.val().length){
+                return 'empty';
+            }else{
+                return null;
+            }
+        }
+        else if(val.length){
+            // 有输入值
+            return null;
+        }
+
+        return 'empty';
+    }
+    showErrorTips(error) {
+        if(error){
+            const $ele = $(error.ele), msg = error.msg,
+                tips = $ele.attr(msg + 'Tips') || $ele.attr('tips') || $ele.attr('placeholder');
+            if(tips) new topTip(tips).render($('body'), 'append');
+
+            if(error.ele.type == 'checkbox' || error.ele.type == 'radio') return;
+
+            jQuery('body').scrollTop(jQuery(error.ele).offset().top - 60);
+            const cellParent = _findCellParent(error.ele);
+            if(cellParent) cellParent.classList.add('weui-cell_warn');
+        }
+    }
+    _findCellParent(ele) {
+        if(!ele || !ele.classList) return null;
+        if(ele.classList.contains('weui-cell')) return ele;
+        return _findCellParent(ele.parentNode);
+    }
+    checkIfBlur() {
+        this.$eles.forEach((ele) => {
+            const $form = $(ele);
+            $form.find('[required]')
+                .on('blur', function () {
+                    // checkbox 和 radio 不做blur检测，以免误触发
+                    if(this.type == 'checkbox' || this.type == 'radio') return;
+
+                    const $this = $(this);
+                    if($this.val().length < 1) return; // 当空的时候不校验，以防不断弹出toptips
+
+                    let errorMsg = _validate($this, $form, options.regexp);
+                    if(errorMsg){
+                        this.showErrorTips({
+                            ele: $this[0],
+                            msg: errorMsg
+                        });
+                    }
+                })
+                .on('focus', function () {
+                    hideErrorTips(this);
+                });
+        });
+
+        return this;
+    }
+    hideErrorTips() {
+        const cellParent = _findCellParent(ele);
+        if(cellParent) cellParent.classList.remove('weui-cell_warn');
+    }
+}
 function _findCellParent(ele){
     if(!ele || !ele.classList) return null;
     if(ele.classList.contains('weui-cell')) return ele;
@@ -231,7 +375,7 @@ function showErrorTips(error){
     if(error){
         const $ele = $(error.ele), msg = error.msg,
             tips = $ele.attr(msg + 'Tips') || $ele.attr('tips') || $ele.attr('placeholder');
-        if(tips) topTips(tips);
+        if(tips) new topTip(tips);
 
         if(error.ele.type == 'checkbox' || error.ele.type == 'radio') return;
 
@@ -253,9 +397,4 @@ function hideErrorTips(ele){
     if(cellParent) cellParent.classList.remove('weui-cell_warn');
 }
 
-export default {
-    showErrorTips,
-    hideErrorTips,
-    validate,
-    checkIfBlur
-};
+export default Form;

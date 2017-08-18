@@ -1,6 +1,6 @@
 <#compress>
     <#include "./ftl/macros.ftl">
-    <#include "./components/cell/main.ftl">
+    <#include "core/components/form/weui-cell/main.ftl">
     <#setting locale="zh_CN">
     <#setting url_escaping_charset="UTF-8">
     <#assign isLogin = isLogin!(currentLoginUserName!"" != "")/>

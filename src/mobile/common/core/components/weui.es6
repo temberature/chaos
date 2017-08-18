@@ -14,21 +14,23 @@
  * limitations under the License.
  */
 
-import {cellMap, datePicker} from './cell';
-import {validate, showErrorTips} from 'weui/js/form/form';
-import topTips from 'weui/js/topTips/topTips';
+import $ from 'jquery';
+import topTip from './topTips/topTips';
+import Form from './form/weui-form';
+let forms = [];
+$.each($('.weui-form'), function () {
+    forms.push(new Form({
+        topTip: new topTip({
+            $mountNode: $('body'),
+            method: 'append'
+        }),
+        $mountNode: $(this),
+        method: 'enhance'
+    }).render());
+});
 
-let page = {
-    cellMap: cellMap,
-    datePicker: datePicker
-};
-let form = {
-    validate: validate,
-    showErrorTips: showErrorTips
-};
+let page = {forms};
 
 export default {
-    page,
-    form,
-    topTips
+    page
 };

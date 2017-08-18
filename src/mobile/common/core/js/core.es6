@@ -1,5 +1,6 @@
 'use strict';
 import formatTime from './formatTime';
-import {page, form, topTips} from '../components/weui';
+import {page} from '../components/weui';
 
-export default {formatTime, page, form, topTips};
+
+export default {formatTime, page};

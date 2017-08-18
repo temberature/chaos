@@ -10,29 +10,29 @@
 <!-- 引入组件库 -->
 <div id="app">
 <#-- 私有代码 -->
-    <div class="creat-event-form">
+    <div class="create-event-form weui-form">
         <div class="weui-cells weui-cells_form">
-            <@input "阅读书籍" "必填" "请输入阅读书籍" "title" "required" "《美国货币史》"></@input>
-            <@input "封面图片" "必填" "请输入封面图片" "cover" "required" "https://img3.doubanio.com/lpic/s3552185.jpg"></@input>
-            <@input "活动标题" "选填" "请输入活动标题" "note"></@input>
+            <@input label="阅读书籍" placeholder="必填" class="title" value="《美国货币史》" propertys="required"></@input>
+            <@input label="封面图片" placeholder="必填" class="cover" value="https://img3.doubanio.com/lpic/s3552185.jpg" propertys="required"></@input>
+            <@input label="活动标题" placeholder="选填" class="note"></@input>
         </div>
         <div class="weui-cells">
-            <@input "发起组织" "必填" "请输入阅读书籍" "club" "required" "梧桐读书沙龙"></@input>
+            <@input label="发起组织" placeholder="必填" class="club" value="梧桐读书沙龙" propertys="required"></@input>
         </div>
         <div class="weui-cells weui-cells_form">
-            <@datePicker "活动日期" "startDate"></@datePicker>
-            <@timePicker "开始时间" "startTime"></@timePicker>
-            <@timePicker "结束时间" "endTime"></@timePicker>
-            <@switch "重复" "repeat"></@switch>
+            <@datePicker label="活动日期" class="startDate" placeholder="年／月／日" propertys="required earlierTips='活动日期不能早于今天'"></@datePicker>
+            <@timePicker label="开始时间" class="startTime" placeholder="时／分" propertys="required"></@timePicker>
+            <@timePicker label="结束时间" class="endTime" placeholder="时／分"></@timePicker>
+            <@switch label="重复" class="repeat"></@switch>
             <#assign options = ["每周", "每两周", "每月"]>
-            <@select "重复频率" options "frequency" "display: none;"></@select>
-            <@datePicker "结束日期" "endDate" "display: none;"></@datePicker>
+            <@select label="重复频率" options=options class="frequency" style="display: none;"></@select>
+            <@datePicker label="结束日期" class="endDate" placeholder="年／月／日" style="display: none;"></@datePicker>
         </div>
         <div class="weui-cells weui-cells_form">
-            <@input "活动地点" "必填" "请输入活动地点" "address" "required" "朝阳门"></@input>
+            <@input label="活动地点" placeholder="必填" class="address" value="朝阳门" propertys="required"></@input>
         </div>
         <div class="weui-cells weui-cells_form">
-            <@input "链接地址" "必填" "请输入链接地址" "event_url" "required" "https://www.douban.com/event/29217166/"></@input>
+            <@input label="链接地址" placeholder="必填" class="event_url" value="https://www.douban.com/event/29217166/" propertys="required"></@input>
         </div>
         <div class="weui-btn-area">
             <a data-onclick="postSeminar" class="weui-btn weui-btn_primary" href="javascript:">发布活动</a>
