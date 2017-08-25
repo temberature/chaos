@@ -19,7 +19,14 @@ $('.weui-btn').on('click', function () {
             return;
         }
 
-        if (cellMap.get('startDate').value.getTime() < new Date().getTime()) {
+        let todayStart = new Date();
+        todayStart.setHours(0);
+        todayStart.setMinutes(0);
+        todayStart.setSeconds(0);
+        todayStart.setMilliseconds(0);
+
+
+        if (cellMap.get('startDate').value < todayStart.getTime()) {
             cellMap.get('startDate').showErrorTips('earlier');
             return;
         }
@@ -28,6 +35,8 @@ $('.weui-btn').on('click', function () {
         cellMap.forEach(function (cell, key) {
             pars[key] = cell.value;
         });
+        pars.repeatFrequency = pars.repeat ? pars.frequency: 0;
+        console.log($.param(pars));
         $.post('/web/bookhero/event/create', pars, function (rs) {
             // app.$indicator.close();
             console.log(rs);

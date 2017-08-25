@@ -27,7 +27,9 @@ class Cell extends Base {
             me.$input = me.$body.find('.weui-input');
             me.$body.on('click', function () {
                 me.hideErrorTips();
+                let today = new Date();
                 new DatePicker({
+                    defaultValue: [today.getFullYear(), today.getMonth()+1, today.getDate()],
                     onChange: function(result){
                         me.date = result;
                     },
@@ -134,16 +136,15 @@ class Cell extends Base {
         let timestamp = new Date(result[0].value, result[1].value-1, result[2].value);
         let pickerLabel = formatTime(timestamp, 'yyyy年M月dd日');
         this.$input.text(pickerLabel);
-        this.timestamp = timestamp;
+        this.timestamp = timestamp.getTime();
     }
     get date() {
         return this.timestamp;
     }
     set time(result) {
-        let timestamp = new Date(0, 0, 0, result[0].value, result[1].value-1);
-        let pickerLabel = formatTime(timestamp, 'hh时mm分');
+        let pickerLabel = result[0].label + result[1].label;
         this.$input.text(pickerLabel);
-        this.timestamp = timestamp;
+        this.timestamp = result[0].value+':'+(result[1].value-1);
     }
     get time() {
         return this.timestamp;
